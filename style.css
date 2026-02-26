@@ -352,6 +352,14 @@ body::before {
     box-shadow: 0 10px 30px var(--shadow-light);
 }
 
+.spotify-container p {
+    text-align: center;
+    font-size: 10px;
+    color: #333;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 .spotify-container iframe {
     display: block;
     width: 100%;
