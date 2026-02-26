@@ -1,82 +1,36 @@
 // Hàm phát nhạc nền
 function playBackgroundMusic() {
     const bgMusic = document.getElementById('bgMusic');
-    const musicToggle = document.getElementById('musicToggle');
-    
+
     if (bgMusic) {
         bgMusic.volume = 0.6; // Âm lượng 60%
         bgMusic.play().catch(err => {
             console.log('Background music autoplay prevented:', err);
         });
-        
-        // Update button state
-        if (musicToggle) {
-            musicToggle.classList.add('playing');
-            musicToggle.classList.remove('paused');
-            musicToggle.textContent = '🎵';
-        }
     }
 }
 
 // Hàm dừng nhạc nền
 function stopBackgroundMusic() {
     const bgMusic = document.getElementById('bgMusic');
-    const musicToggle = document.getElementById('musicToggle');
-    
+
     if (bgMusic) {
         bgMusic.pause();
         bgMusic.currentTime = 0;
-        
-        // Update button state
-        if (musicToggle) {
-            musicToggle.classList.remove('playing');
-            musicToggle.classList.add('paused');
-            musicToggle.textContent = '🔇';
-        }
     }
 }
 
 // Hàm toggle nhạc nền
 function toggleMusic() {
     const bgMusic = document.getElementById('bgMusic');
-    
+
     if (bgMusic) {
         if (bgMusic.paused) {
             playBackgroundMusic();
-            showNotification('Nhạc nền đã bật 🎵');
         } else {
             stopBackgroundMusic();
-            showNotification('Nhạc nền đã tắt 🔇');
         }
     }
-}
-
-// Hàm hiển thị thông báo tạm thời
-function showNotification(message) {
-    // Remove existing notification
-    const existing = document.querySelector('.music-notification');
-    if (existing) {
-        existing.remove();
-    }
-    
-    // Create notification
-    const notification = document.createElement('div');
-    notification.className = 'music-notification';
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    
-    // Show notification
-    setTimeout(() => {
-        notification.classList.add('show');
-    }, 10);
-    
-    // Hide and remove after 3 seconds
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 3000);
 }
 
 // Hàm mở thư
@@ -129,24 +83,22 @@ function openLetter() {
             const spotifyContainer = document.querySelector('.spotify-container');
             if (spotifyContainer) {
                 let hasClicked = false;
-                
+
                 spotifyContainer.addEventListener('click', () => {
                     if (!hasClicked) {
                         console.log('Spotify clicked - stopping background music');
                         stopBackgroundMusic();
-                        
+
                         // Show temporary notification
-                        showNotification('Nhạc nền đã tắt. Dùng nút 🎵 ở góc để bật lại.');
                         hasClicked = true;
                     }
                 });
-                
+
                 // Also detect iframe interaction (more reliable)
                 window.addEventListener('blur', () => {
                     if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
                         if (!hasClicked) {
                             stopBackgroundMusic();
-                            showNotification('Nhạc nền đã tắt. Dùng nút 🎵 ở góc để bật lại.');
                             hasClicked = true;
                         }
                     }
@@ -160,10 +112,10 @@ function openLetter() {
 document.addEventListener('DOMContentLoaded', () => {
     const envelope = document.getElementById('envelope');
     if (envelope) {
-        envelope.addEventListener('touchstart', function() {
+        envelope.addEventListener('touchstart', function () {
             this.style.transform = 'scale(0.98)';
         });
-        envelope.addEventListener('touchend', function() {
+        envelope.addEventListener('touchend', function () {
             this.style.transform = 'scale(1)';
         });
     }
