@@ -222,7 +222,7 @@ body::before {
 
 .swiper {
     width: 100%;
-    height: clamp(300px, 80vw, 450px);
+    height: 100%;
     border-radius: 16px;
     margin: 0 0 24px 0;
     box-shadow: 0 15px 50px var(--shadow-medium);
@@ -432,9 +432,12 @@ body::before {
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.05);
     }
@@ -508,7 +511,7 @@ body::before {
 /* Desktop */
 @media (min-width: 1024px) {
     .swiper {
-        height: 500px;
+        height: 420px;
     }
 
     .message-box:hover {
