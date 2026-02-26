@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tri ân ThaoMee - Lời chúc tốt đẹp nhất">
+    <title>Tri ÂnThaoMee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- Hidden audio for background music autoplay -->
+    <audio id="bgMusic" loop>
+        <source src="music/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <div class="envelope-wrapper" id="envelope" onclick="openLetter()">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="letter">
+                    <p>Dear ThaoMee,</p>
+                    <button>Mở luôn!</button>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/2.jpg" alt="Kỷ niệm đẹp 1" loading="lazy">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="message-box">
+                <p>Chúc em luôn rạng rỡ, tự tin và gặt hái được nhiều thành công trên hành trình mới. Đừng
+                    quên giữ liên lạc nhé
+                </p>
+            </div>
+
+            <div class="spotify-container">
+                <iframe data-testid="embed-iframe" style="border-radius:12px"
+                    src="https://open.spotify.com/embed/playlist/3EoFLPyP9SDBjXn2nxoffR?utm_source=generator&theme=0"
+                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
+
+            <button class="back-btn" onclick="location.reload()">Cất poster và khóc</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
