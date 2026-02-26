@@ -12,8 +12,8 @@
 
 <body>
     <!-- Hidden audio for background music autoplay -->
-    <audio id="bgMusic" loop>
-        <source src="music/background.mp3" type="audio/mpeg">
+    <audio id="bgMusic" loop preload="auto">
+        <source src="I Lay My Love on You.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
@@ -29,6 +29,11 @@
         </div>
 
         <div class="main-content" id="mainContent">
+            <!-- Music control button -->
+            <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Tắt/Bật nhạc nền">
+                🎵
+            </button>
+
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -41,8 +46,7 @@
             </div>
 
             <div class="message-box">
-                <p>Chúc em luôn rạng rỡ, tự tin và gặt hái được nhiều thành công trên hành trình mới. Đừng
-                    quên giữ liên lạc nhé
+                <p>Chúc em luôn rạng rỡ, tự tin và gặt hái được nhiều thành công trên hành trình mới nhé!
                 </p>
             </div>
 
@@ -57,6 +61,7 @@
             <button class="back-btn" onclick="location.reload()">Cất poster và khóc</button>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 
